@@ -1,0 +1,1230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  background-color: #000;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Header & Navigation */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+.logo img {
+  max-height: 50px; /* Giới hạn chiều cao tối đa */
+  width: auto; /* Đảm bảo giữ tỉ lệ ảnh */
+  height: auto; /* Tự động điều chỉnh chiều cao */
+  max-width: 100%; /* Không bị tràn khung */
+  margin-left: 0; /* Căn chuẩn logo */
+  display: block; /* Tránh lỗi inline spacing */
+}
+@media (max-width: 480px) {
+  .logo img {
+    max-height: 35px;
+  }
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-menu a:hover {
+  color: #d4af37;
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #d4af37;
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .logo img {
+    height: 20px;
+  }
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(1.2);
+  transition: transform 1s ease; /* Mượt khi zoom */
+}
+
+.hero:hover .hero-video {
+  transform: scale(1.09); /* Phóng nhẹ video nền */
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 2rem;
+  animation: fadeInUp 1s ease;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+.cinematic-hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Oswald", sans-serif;
+}
+
+.cinematic-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(1.25);
+  z-index: 0;
+  transition: transform 1s ease; /* Hiệu ứng zoom mượt */
+  margin-top: 50px;
+  border-radius: 20px;
+}
+
+/* Zoom video khi hover vào section */
+.cinematic-hero:hover .cinematic-video {
+  transform: scale(1.09); /* Phóng nhẹ video */
+}
+.cinematic-overlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 0 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-text h1 {
+  font-size: 3vw;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.right-text {
+  text-align: right;
+  max-width: 400px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.watch-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid white;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.watch-link:hover {
+  opacity: 0.7;
+  border-color: #ccc;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: white;
+  background-size: 300% 300%;
+  border: 1px solid white;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+
+  font-family: "Oswald", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: all 0.5s ease;
+}
+
+.cta-btn:hover::before {
+  left: 130%;
+}
+
+.cta-btn:hover {
+  background-position: right center;
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6);
+  transform: translateY(-5px);
+}
+
+/* Featured Cars Section */
+.featured-cars {
+  padding: 5rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: #333;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: #d4af37;
+}
+
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.car-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(237, 230, 230, 0.556);
+
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.car-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+.car-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.car-card:hover .car-image {
+  transform: scale(1.05);
+}
+
+.car-info {
+  padding: 2rem;
+}
+
+.car-brand {
+  color: #d4af37;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.car-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.car-price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin: 1rem 0;
+}
+
+.car-specs {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.view-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(45deg, #333, #555);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+  background: linear-gradient(45deg, #555, #777);
+  transform: translateY(-2px);
+}
+
+/* Services Section */
+.services {
+  padding: 5rem 0;
+  background: #333;
+  color: white;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.service-card {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-icon {
+  font-size: 3rem;
+  color: #d4af37;
+  margin-bottom: 1rem;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer {
+  background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.7) 100%
+    ),
+    url(https://images.unsplash.com/photo-1661198550180-2ba17bfe108c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 50px 0 30px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 80px;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="30" r="1.5" fill="rgba(255,255,255,0.05)"/><circle cx="40" cy="70" r="1" fill="rgba(255,255,255,0.08)"/></svg>');
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-section h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #ff6b35, #f7931e);
+}
+
+.contact-info {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 8px 0;
+}
+
+.contact-item:last-child {
+  margin-bottom: 0;
+}
+
+.contact-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+  fill: #ff6b35;
+  flex-shrink: 0;
+}
+
+.contact-text {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.newsletter {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.newsletter h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.newsletter p {
+  font-size: 14px;
+  margin-bottom: 25px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 400px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  padding: 5px;
+  backdrop-filter: blur(10px);
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 14px;
+  outline: none;
+}
+
+.newsletter-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.newsletter-btn {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.newsletter-btn:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+}
+
+/* Lớp phủ làm tối bên phải */
+.carcare-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%; /* phần nửa bên phải */
+  height: 100%;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.9), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.carcare-left-section {
+  flex: 1;
+  max-width: 50%;
+}
+
+.carcare-info-box {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 20px 30px;
+  margin-bottom: 30px;
+  backdrop-filter: blur(10px);
+  color: #fff;
+}
+
+.carcare-info-box h3 {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.carcare-info-box p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.carcare-info-box a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 16px;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.carcare-right-section {
+  flex: 1;
+  max-width: 45%;
+  text-align: right;
+}
+
+.carcare-right-section h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.carcare-right-section p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #ddd;
+  max-width: 520px; /* kiểm soát độ rộng dòng */
+  text-align: justify; /* căn đều hai bên cho chuyên nghiệp */
+  margin: 0 auto 20px 0; /* căn trái, có khoảng cách dưới */
+}
+
+.carcare-image {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 40px;
+  margin-right: -50px; /* đẩy ảnh sang phải */
+  margin-bottom: -340px; /* đẩy ảnh ra khỏi khung xuống dưới */
+  position: relative;
+  z-index: 2;
+
+  /* Hiệu ứng khi chưa xuất hiện */
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.8s ease-out;
+}
+
+.carcare-image.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: #ff6b35;
+  transform: translateX(5px);
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.social-link:hover {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+}
+
+.map-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.map-container h3 {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 25px;
+  text-align: center;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.footer-bottom a {
+  color: #ff6b35;
+  text-decoration: none;
+}
+.carcare-darken-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+/* From Uiverse.io by adamgiebl */
+button {
+  font-family: inherit;
+  font-size: 12px;
+  background: #ff6b35;
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+button:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+button:hover span {
+  transform: translateX(5em);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
+.carcare-container {
+  position: relative;
+  z-index: 2;
+  max-width: 2500px;
+  margin: auto;
+  padding: 30px 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-image: url(https://autolinkvietnam.com.vn/wp-content/uploads/2025/04/imagdue-1.webp);
+  background-size: cover;
+  background-position: center;
+  /* Bỏ overflow: hidden */
+  overflow: visible;
+}
+
+/* Lớp phủ làm tối bên phải */
+.carcare-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%; /* phần nửa bên phải */
+  height: 100%;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.9), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.carcare-left-section {
+  flex: 1;
+  max-width: 50%;
+}
+
+.carcare-info-box {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 20px 30px;
+  margin-bottom: 30px;
+  backdrop-filter: blur(10px);
+  color: #fff;
+}
+
+.carcare-info-box h3 {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.carcare-info-box p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.carcare-info-box a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 16px;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.carcare-right-section {
+  flex: 1;
+  max-width: 45%;
+  text-align: right;
+}
+
+.carcare-right-section h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.carcare-right-section p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #ddd;
+  max-width: 520px; /* kiểm soát độ rộng dòng */
+  text-align: justify; /* căn đều hai bên cho chuyên nghiệp */
+  margin: 0 auto 20px 0; /* căn trái, có khoảng cách dưới */
+}
+
+.carcare-image {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 40px;
+  margin-right: -50px; /* đẩy ảnh sang phải */
+  margin-bottom: -340px; /* đẩy ảnh ra khỏi khung xuống dưới */
+  position: relative;
+  z-index: 2;
+
+  /* Hiệu ứng khi chưa xuất hiện */
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.8s ease-out;
+}
+
+.carcare-image.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 1200px) {
+  .carcare-container {
+    padding: 30px 100px;
+  }
+
+  .carcare-right-section p {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .carcare-container {
+    flex-direction: column;
+    padding: 40px 30px;
+    background-position: center;
+  }
+
+  .carcare-left-section,
+  .carcare-right-section {
+    max-width: 100%;
+    flex: 1;
+    text-align: center;
+  }
+
+  .carcare-right-section h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .carcare-right-section p {
+    font-size: 14px;
+    margin: 0 auto 20px auto;
+    text-align: justify;
+  }
+
+  .carcare-image {
+    max-width: 100%;
+    margin: 20px auto 0 auto;
+    transform: translateX(0); /* reset chuyển động */
+    opacity: 1; /* hiển thị ngay */
+  }
+
+  .carcare-container::before {
+    display: none; /* tắt lớp phủ trên mobile */
+  }
+}
+
+@media (max-width: 576px) {
+  .carcare-info-box {
+    padding: 20px;
+  }
+
+  .carcare-info-box h3 {
+    font-size: 18px;
+  }
+
+  .carcare-info-box p {
+    font-size: 13px;
+  }
+
+  .carcare-right-section h1 {
+    font-size: 24px;
+  }
+
+  .carcare-right-section p {
+    font-size: 13px;
+  }
+
+  .carcare-info-box a {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    border-radius: 15px;
+  }
+
+  .newsletter-input {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .newsletter-btn {
+    border-radius: 10px;
+  }
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.social-links a {
+  color: #4ecdc4;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px) scale(1.2);
+  color: #ff6b6b;
+}
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-menu.active {
+    transform: translateX(0);
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .cars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-container {
+    padding: 0 1rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .car-info {
+    padding: 1.5rem;
+  }
+
+  .car-specs {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  color: #ffffff;
+  background-color: #111;
+  border: 1px solid #444;
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.search-icon:hover {
+  background-color: #d4af37;
+  color: black;
+}
+
+.search-input {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateY(-10px);
+  background-color: #fff;
+  color: #000;
+  width: 220px;
+  font-size: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  font-family: "Segoe UI", sans-serif;
+  z-index: 1001;
+}
+
+/* Khi nhấn icon tìm kiếm */
+.search-container.active .search-input {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  display: block;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+  .search-input {
+    top: 8px;
+    right: 100px;
+    width: 160px;
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+}
+.floating-icons {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 999;
+}
+
+.floating-icon {
+  width: 50px;
+  height: 50px;
+  background: #d4af37;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 22px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.floating-icon.zalo img {
+  width: 26px;
+  height: 26px;
+}
+
+/* Hiệu ứng đổ chuông */
+@keyframes ring {
+  0% {
+    transform: rotate(0);
+  }
+  15% {
+    transform: rotate(15deg);
+  }
+  30% {
+    transform: rotate(-10deg);
+  }
+  45% {
+    transform: rotate(8deg);
+  }
+  60% {
+    transform: rotate(-6deg);
+  }
+  75% {
+    transform: rotate(4deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.floating-icon:hover {
+  animation: ring 0.6s ease-in-out;
+  transform-origin: center;
+}
+#scrollProgressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(90deg, #f5d76e, #fff4c2);
+  box-shadow: 0 0 6px rgba(255, 223, 128, 0.5);
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}

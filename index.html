@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AUTOLUX - Xe Hạng Sang Cao Cấp</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link
+      rel="icon"
+      type="image/png"
+      href="/image/logotabs.png"
+      sizes="96x96"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+ 
+  </head>
+  <body>
+    <div id="scrollProgressBar"></div>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav-container">
+        <a href="#" class="logo">
+          <img src="/image/sss.png" alt="AutoLux Logo" />
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="#home">Trang Chủ</a></li>
+          <li><a href="#cars">Xe Hạng Sang</a></li>
+          <li><a href="#services">Dịch Vụ</a></li>
+          <li><a href="#about">Về Chúng Tôi</a></li>
+          <li><a href="#contact">Liên Hệ</a></li>
+
+          <!-- Giỏ hàng -->
+          <li>
+            <a href="#cart"><i class="fas fa-shopping-cart"></i> Giỏ Hàng</a>
+          </li>
+
+          <!-- Tài khoản -->
+          <li>
+            <a href="#account"><i class="fas fa-user"></i> Tài Khoản</a>
+          </li>
+
+          <!-- Tìm kiếm -->
+          <li class="search-container">
+            <i class="search-icon fas fa-search"></i>
+            <input type="text" class="search-input" placeholder="Tìm kiếm..." />
+          </li>
+        </ul>
+
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="/video/high.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-content">
+        <h1>AUTOLUX</h1>
+        <p>Nơi hội tụ những chiếc xe hạng sang đỉnh cao</p>
+        <a href="#cars" class="cta-btn">Khám Phá Ngay</a>
+      </div>
+    </section>
+    <section class="cinematic-hero" id="home">
+      <video autoplay muted loop playsinline class="cinematic-video">
+        <source src="/video/highs.mp4" type="video/mp4" />
+      </video>
+
+      <div class="cinematic-overlay">
+        <div class="left-text">
+          <h1>A RECORD-BREAKING<br />FORCE OF NATURE</h1>
+        </div>
+        <div class="right-text">
+          <p>
+            Setting a new benchmark at 453.91 km/h.<br />
+            A triumph of passion, precision, and performance.
+          </p>
+          <a href="#record" class="watch-link">WATCH THE RECORD</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Cars Section -->
+    <section class="featured-cars" id="cars">
+      <div class="container">
+        <h2 class="section-title">Xe Hạng Sang Nổi Bật</h2>
+        <div class="cars-grid">
+          <div class="car-card">
+            <img
+              src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Lamborghini"
+              class="car-image"
+            />
+            <div class="car-info">
+              <div class="car-brand">LAMBORGHINI</div>
+              <h3 class="car-name">Huracán EVO</h3>
+              <div class="car-price">15.8 tỷ VNĐ</div>
+              <div class="car-specs">
+                <span>V10 5.2L</span>
+                <span>610 HP</span>
+                <span>2020</span>
+              </div>
+              <button class="view-btn">Xem Chi Tiết</button>
+            </div>
+          </div>
+
+          <div class="car-card">
+            <img
+              src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Rolls Royce"
+              class="car-image"
+            />
+            <div class="car-info">
+              <div class="car-brand">ROLLS-ROYCE</div>
+              <h3 class="car-name">Phantom VIII</h3>
+              <div class="car-price">28.5 tỷ VNĐ</div>
+              <div class="car-specs">
+                <span>V12 6.75L</span>
+                <span>563 HP</span>
+                <span>2021</span>
+              </div>
+              <button class="view-btn">Xem Chi Tiết</button>
+            </div>
+          </div>
+
+          <div class="car-card">
+            <img
+              src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Ferrari"
+              class="car-image"
+            />
+            <div class="car-info">
+              <div class="car-brand">FERRARI</div>
+              <h3 class="car-name">F8 Tributo</h3>
+              <div class="car-price">18.2 tỷ VNĐ</div>
+              <div class="car-specs">
+                <span>V8 3.9L Turbo</span>
+                <span>710 HP</span>
+                <span>2020</span>
+              </div>
+              <button class="view-btn">Xem Chi Tiết</button>
+            </div>
+          </div>
+
+          <div class="car-card">
+            <img
+              src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Bentley"
+              class="car-image"
+            />
+            <div class="car-info">
+              <div class="car-brand">BENTLEY</div>
+              <h3 class="car-name">Continental GT</h3>
+              <div class="car-price">12.8 tỷ VNĐ</div>
+              <div class="car-specs">
+                <span>W12 6.0L</span>
+                <span>626 HP</span>
+                <span>2021</span>
+              </div>
+              <button class="view-btn">Xem Chi Tiết</button>
+            </div>
+          </div>
+
+          <div class="car-card">
+            <img
+              src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Audi"
+              class="car-image"
+            />
+            <div class="car-info">
+              <div class="car-brand">AUDI</div>
+              <h3 class="car-name">R8 V10 Plus</h3>
+              <div class="car-price">9.5 tỷ VNĐ</div>
+              <div class="car-specs">
+                <span>V10 5.2L</span>
+                <span>610 HP</span>
+                <span>2020</span>
+              </div>
+              <button class="view-btn">Xem Chi Tiết</button>
+            </div>
+          </div>
+
+          <div class="car-card">
+            <img
+              src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Porsche"
+              class="car-image"
+            />
+            <div class="car-info">
+              <div class="car-brand">PORSCHE</div>
+              <h3 class="car-name">911 Turbo S</h3>
+              <div class="car-price">14.2 tỷ VNĐ</div>
+              <div class="car-specs">
+                <span>H6 3.8L Turbo</span>
+                <span>640 HP</span>
+                <span>2021</span>
+              </div>
+              <button class="view-btn">Xem Chi Tiết</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <div class="carcare-container">
+      <div class="carcare-left-section">
+        <div class="carcare-info-box">
+          <h3>BẢO DƯỠNG NGOẠI THẤT XE</h3>
+          <p>
+            Hướng dẫn cách rửa xe đúng kỹ thuật, chăm sóc sơn xe bằng dán PPF,
+            phủ nano để bảo vệ lớp sơn và chống trầy xước, cùng với các biện
+            pháp chống gỉ gầm xe.
+          </p>
+          <a href="#">Xem thêm</a>
+        </div>
+        <div class="carcare-info-box">
+          <h3>BẢO DƯỠNG NỘI THẤT VÀ ĐỘNG CƠ</h3>
+          <p>
+            Cách vệ sinh ghế, thảm, bảng điều khiển, cùng những lưu ý khi bảo
+            trì động cơ, thay dầu định kỳ, kiểm tra và bảo dưỡng hệ thống điện
+            và phanh để xe luôn vận hành êm ái và an toàn.
+          </p>
+          <a href="#">Xem thêm</a>
+        </div>
+      </div>
+
+      <div class="carcare-right-section">
+        <h1>CẨM NANG CHĂM SÓC XE</h1>
+        <p>
+          Cẩm nang chăm sóc xe cung cấp hướng dẫn chi tiết về các bước bảo dưỡng
+          và chăm sóc ô tô để duy trì hiệu suất và vẻ ngoài tốt nhất. Nội dung
+          bao gồm từ việc rửa xe đúng cách, bảo vệ bề mặt bằng dán PPF và phủ
+          nano, đến chống gỉ gầm xe và các mẹo bảo trì phụ kiện. Sổ tay này giúp
+          chủ xe hiểu rõ cách chăm sóc xe toàn diện, kéo dài tuổi thọ và giữ giá
+          trị xe lâu dài.
+        </p>
+        <img
+          class="carcare-image"
+          src="https://autolinkvietnam.com.vn/wp-content/uploads/2025/04/pngwing.com-10-1-1-1.webp"
+          alt="Xe BMW"
+        />
+      </div>
+    </div>
+    <div class="floating-icons">
+      <a href="tel:0123456789" class="floating-icon phone" title="Gọi điện">
+        <i class="fas fa-phone-alt"></i>
+      </a>
+      <a
+        href="https://zalo.me/yourzaloid"
+        class="floating-icon zalo"
+        title="Chat Zalo"
+        target="_blank"
+      >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
+          alt="Zalo"
+        />
+      </a>
+    </div>
+    <div class="floating-icons">
+      <a href="tel:0123456789" class="floating-icon phone" title="Gọi điện">
+        <i class="fas fa-phone-alt"></i>
+      </a>
+      <a
+        href="https://zalo.me/yourzaloid"
+        class="floating-icon zalo"
+        title="Chat Zalo"
+        target="_blank"
+      >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
+          alt="Zalo"
+        />
+      </a>
+    </div>
+
+    <!-- Footer -->
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <!-- Newsletter Section -->
+        <div class="newsletter">
+          <h2>Liên Hệ Với Chúng Tôi</h2>
+          <p>
+            Để không bỏ lỡ những thông tin hữu ích về dịch vụ và các ưu đãi hấp
+            dẫn từ AutoLink, hãy để lại email của bạn bên dưới. Chúng tôi sẽ gửi
+            đến bạn những cập nhật mới nhất về các chương trình khuyến mãi đặc
+            biệt!
+          </p>
+          <form class="newsletter-form">
+            <input
+              type="email"
+              class="newsletter-input"
+              placeholder="Email"
+              required
+            />
+            <!-- From Uiverse.io by adamgiebl -->
+            <button>
+              <div class="svg-wrapper-1">
+                <div class="svg-wrapper">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path
+                      fill="currentColor"
+                      d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <span>Send</span>
+            </button>
+          </form>
+        </div>
+
+        <div class="footer-content">
+          <!-- Contact Info -->
+          <div class="footer-section">
+            <div class="contact-info">
+              <div class="contact-item">
+                <svg class="contact-icon" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                  />
+                </svg>
+                <div class="contact-text">
+                  164 D. Lê Văn Lương, Tân Kiểng, Quận 7, Hồ Chí Minh, Việt Nam
+                </div>
+              </div>
+              <div class="contact-item">
+                <svg class="contact-icon" viewBox="0 0 24 24">
+                  <path
+                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                  />
+                </svg>
+                <div class="contact-text">0832250688</div>
+              </div>
+              <div class="contact-item">
+                <svg class="contact-icon" viewBox="0 0 24 24">
+                  <path
+                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                  />
+                </svg>
+                <div class="contact-text">admin@autolink.com.vn</div>
+              </div>
+              <div class="contact-item">
+                <svg class="contact-icon" viewBox="0 0 24 24">
+                  <path
+                    d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                  />
+                  <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+                </svg>
+                <div class="contact-text">
+                  Các ngày trong tuần: 8:00 am - 5:30pm
+                </div>
+              </div>
+              <div class="social-links">
+                <a href="#" class="social-link">f</a>
+                <a href="#" class="social-link">▶</a>
+                <a href="#" class="social-link">♪</a>
+                <a href="#" class="social-link">Z</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Services -->
+          <div class="footer-section">
+            <h3>Dịch Vụ</h3>
+            <ul class="footer-links">
+              <li><a href="#">Rửa xe nội ngoại thất Detailing</a></li>
+              <li><a href="#">Phủ Nano Ceramic</a></li>
+              <li><a href="#">Dán PPF</a></li>
+              <li><a href="#">Dán phim cách nhiệt</a></li>
+              <li><a href="#">Bọc da ghế / trần xe</a></li>
+              <li><a href="#">Phụ kiện - Đồ chơi xe hơi</a></li>
+            </ul>
+          </div>
+
+          <!-- Blog -->
+          <div class="footer-section">
+            <h3>Blog</h3>
+            <ul class="footer-links">
+              <li><a href="#">Chuyên ngành Detailing</a></li>
+              <li><a href="#">Kiến thức chăm sóc xe</a></li>
+              <li><a href="#">Chăm sóc xe tại nhà</a></li>
+              <li><a href="#">Các dự án đã thực hiện</a></li>
+              <li><a href="#">Bảng tin nội bộ</a></li>
+            </ul>
+          </div>
+
+          <!-- Map -->
+          <div class="footer-section">
+            <div class="map-container">
+              <h3>Bản Đồ Vị Trí AutoLink VN</h3>
+              <div class="map-placeholder">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.830293814133!2d106.704638810039!3d10.74755928416558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f75c921e8c7%3A0xfe130754c04517c3!2zMTY0IMSQLiBMw6ogVsSDbiBMxrDGoW5nLCBUw6JuIEtp4buDbmcsIFF14bqtbiA3LCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1750817986176!5m2!1svi!2s"
+                  width="100%"
+                  height="200"
+                  style="border: 0; border-radius: 10px"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                >
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Company Info -->
+        <div style="text-align: center; margin: 30px 0">
+          <h3 style="margin-bottom: 10px">
+            Trang Chủ | Về Chúng Tôi | Chính Sách Bảo Hành | Liên Hệ
+          </h3>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p>
+            Copyright © 2024 Autolux. All Rights Reserved. Design by
+            <a href="#">N.V.P</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+  <script src="js/styles.js"></script>
+</html>
