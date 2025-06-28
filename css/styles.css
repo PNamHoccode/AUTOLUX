@@ -5,10 +5,15 @@
 }
 
 body {
-  font-family: 'utm-bitsumishi-pr', sans-serif;
+  font-family: 'time new roman', serif;
   background-color: #000;
   color: #ffffff;
   overflow-x: hidden;
+}
+
+h1,
+h2 {
+  font-family: 'DM Serif Display', serif;
 }
 
 /* Header & Navigation */
@@ -23,6 +28,22 @@ body {
   transition: all 0.3s ease;
 }
 
+.nav-left {
+  flex: 0 0 auto;
+}
+
+.nav-center {
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-right {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -31,14 +52,22 @@ body {
   align-items: center;
   padding: 0 2rem;
 }
+
 .logo img {
-  max-height: 50px; /* Giới hạn chiều cao tối đa */
-  width: auto; /* Đảm bảo giữ tỉ lệ ảnh */
-  height: auto; /* Tự động điều chỉnh chiều cao */
-  max-width: 100%; /* Không bị tràn khung */
-  margin-left: 0; /* Căn chuẩn logo */
-  display: block; /* Tránh lỗi inline spacing */
+  max-height: 50px;
+  /* Giới hạn chiều cao tối đa */
+  width: auto;
+  /* Đảm bảo giữ tỉ lệ ảnh */
+  height: auto;
+  /* Tự động điều chỉnh chiều cao */
+  max-width: 100%;
+  /* Không bị tràn khung */
+  margin-left: 0;
+  /* Căn chuẩn logo */
+  display: block;
+  /* Tránh lỗi inline spacing */
 }
+
 @media (max-width: 480px) {
   .logo img {
     max-height: 35px;
@@ -47,8 +76,27 @@ body {
 
 .nav-menu {
   display: flex;
+  align-items: center;
+  justify-content: center;
   list-style: none;
+  padding: 0;
+  margin: 0;
   gap: 2rem;
+  position: relative;
+}
+
+.nav-center {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-right {
+  display: flex;
+  gap: 1.5rem;
+  margin-left: auto;
+  /* Đẩy nav-right sang phải */
+  align-items: center;
+
 }
 
 .nav-menu a {
@@ -78,6 +126,32 @@ body {
   width: 100%;
 }
 
+.nav-link {
+  color: white;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #d4af37;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #d4af37;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
 .mobile-menu-btn {
   display: none;
   background: none;
@@ -86,6 +160,7 @@ body {
   font-size: 1.5rem;
   cursor: pointer;
 }
+
 @media (max-width: 768px) {
   .logo img {
     height: 20px;
@@ -113,12 +188,15 @@ body {
   object-fit: cover;
   z-index: 0;
   filter: brightness(1.2);
-  transition: transform 1s ease; /* Mượt khi zoom */
+  transition: transform 1s ease;
+  /* Mượt khi zoom */
 }
 
 .hero:hover .hero-video {
-  transform: scale(1.09); /* Phóng nhẹ video nền */
+  transform: scale(1.09);
+  /* Phóng nhẹ video nền */
 }
+
 .hero-content {
   position: relative;
   z-index: 1;
@@ -139,6 +217,7 @@ body {
   margin-bottom: 2rem;
   opacity: 0.9;
 }
+
 .cinematic-hero {
   position: relative;
   height: 100vh;
@@ -159,15 +238,18 @@ body {
   object-fit: cover;
   filter: brightness(1.25);
   z-index: 0;
-  transition: transform 1s ease; /* Hiệu ứng zoom mượt */
+  transition: transform 1s ease;
+  /* Hiệu ứng zoom mượt */
   margin-top: 50px;
   border-radius: 20px;
 }
 
 /* Zoom video khi hover vào section */
 .cinematic-hero:hover .cinematic-video {
-  transform: scale(1.09); /* Phóng nhẹ video */
+  transform: scale(1.09);
+  /* Phóng nhẹ video */
 }
+
 .cinematic-overlay {
   position: relative;
   z-index: 1;
@@ -237,11 +319,9 @@ body {
   left: -75%;
   width: 50%;
   height: 100%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 0.2),
+      transparent);
   transform: skewX(-25deg);
   transition: all 0.5s ease;
 }
@@ -271,7 +351,7 @@ body {
   text-align: center;
   font-size: 3rem;
   margin-bottom: 3rem;
-  color: #333;
+  color: white;
   position: relative;
 }
 
@@ -294,79 +374,230 @@ body {
 }
 
 .car-card {
-  background: white;
-  border-radius: 15px;
+  background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(237, 230, 230, 0.556);
-
-  transition: all 0.3s ease;
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
+  max-width: 380px;
+  width: 100%;
+  backdrop-filter: blur(10px);
+}
+
+.car-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
 }
 
 .car-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  transform: translateY(-15px) rotateX(5deg);
+  box-shadow:
+    0 35px 70px rgba(0, 0, 0, 0.9),
+    0 0 0 1px rgba(212, 175, 55, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.car-card:hover::before {
+  opacity: 1;
+}
+
+.car-image-container {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  background: linear-gradient(45deg, #000, #1a1a1a);
 }
 
 .car-image {
   width: 100%;
-  height: 250px;
+  height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: all 0.6s ease;
+  filter: brightness(0.9) contrast(1.1);
 }
 
 .car-card:hover .car-image {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  filter: brightness(1.1) contrast(1.2);
+}
+
+.luxury-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(45deg, #d4af37, #ffd700);
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+  z-index: 2;
 }
 
 .car-info {
   padding: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 .car-brand {
   color: #d4af37;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 0.9rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
 .car-name {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 0.5rem 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0.5rem 0 1rem 0;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
 }
 
 .car-price {
   font-size: 1.8rem;
-  font-weight: bold;
-  color: #333;
-  margin: 1rem 0;
+  font-weight: 900;
+  background: linear-gradient(45deg, #d4af37, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 1.2rem 0;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
 }
 
 .car-specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.spec-item {
   display: flex;
-  justify-content: space-between;
-  margin: 1rem 0;
+  flex-direction: column;
+  align-items: center;
+  color: #cccccc;
+  font-size: 0.85rem;
+}
+
+.spec-value {
+  font-weight: 700;
+  color: #ffffff;
   font-size: 0.9rem;
-  color: #666;
+  margin-bottom: 2px;
+}
+
+.spec-label {
+  font-size: 0.7rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .view-btn {
-  width: 100%;
-  padding: 0.8rem;
-  background: linear-gradient(45deg, #333, #555);
-  color: white;
+  background: linear-gradient(45deg, #d4af37, #ffd700);
+  color: #000;
   border: none;
-  border-radius: 8px;
-  font-weight: bold;
+  padding: 12px 32px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: all 0.4s ease;
   cursor: pointer;
-  transition: all 0.3s ease;
+  box-shadow:
+    0 8px 25px rgba(212, 175, 55, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.view-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
 }
 
 .view-btn:hover {
-  background: linear-gradient(45deg, #555, #777);
   transform: translateY(-2px);
+  box-shadow:
+    0 12px 35px rgba(212, 175, 55, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.view-btn:hover::before {
+  left: 100%;
+}
+
+.view-btn:active {
+  transform: translateY(0);
+}
+
+/* Animation khi load */
+@keyframes cardSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px) rotateX(-10deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+.car-card {
+  animation: cardSlideIn 0.8s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .car-card {
+    max-width: 100%;
+    margin: 0 10px;
+  }
+
+  .car-info {
+    padding: 1.5rem;
+  }
+
+  .car-name {
+    font-size: 1.4rem;
+  }
+
+  .car-price {
+    font-size: 1.6rem;
+  }
 }
 
 /* Services Section */
@@ -408,11 +639,9 @@ body {
 }
 
 .footer {
-  background: linear-gradient(
-      135deg,
+  background: linear-gradient(135deg,
       rgba(0, 0, 0, 0.9) 0%,
-      rgba(0, 0, 0, 0.7) 100%
-    ),
+      rgba(0, 0, 0, 0.7) 100%),
     url(https://images.unsplash.com/photo-1661198550180-2ba17bfe108c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
   background-size: cover;
   background-position: center;
@@ -559,93 +788,6 @@ body {
   box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
 }
 
-/* Lớp phủ làm tối bên phải */
-.carcare-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%; /* phần nửa bên phải */
-  height: 100%;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0.9), transparent);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.carcare-left-section {
-  flex: 1;
-  max-width: 50%;
-}
-
-.carcare-info-box {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  padding: 20px 30px;
-  margin-bottom: 30px;
-  backdrop-filter: blur(10px);
-  color: #fff;
-}
-
-.carcare-info-box h3 {
-  font-weight: 700;
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.carcare-info-box p {
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.carcare-info-box a {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 8px 16px;
-  background: #fff;
-  color: #000;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-}
-
-.carcare-right-section {
-  flex: 1;
-  max-width: 45%;
-  text-align: right;
-}
-
-.carcare-right-section h1 {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #fff;
-  text-align: center;
-}
-
-.carcare-right-section p {
-  font-size: 14px;
-  line-height: 1.5;
-  color: #ddd;
-  max-width: 520px; /* kiểm soát độ rộng dòng */
-  text-align: justify; /* căn đều hai bên cho chuyên nghiệp */
-  margin: 0 auto 20px 0; /* căn trái, có khoảng cách dưới */
-}
-
-.carcare-image {
-  width: 100%;
-  max-width: 500px;
-  margin-top: 40px;
-  margin-right: -50px; /* đẩy ảnh sang phải */
-  margin-bottom: -340px; /* đẩy ảnh ra khỏi khung xuống dưới */
-  position: relative;
-  z-index: 2;
-
-  /* Hiệu ứng khi chưa xuất hiện */
-  opacity: 0;
-  transform: translateX(100px);
-  transition: all 0.8s ease-out;
-}
 
 .carcare-image.show {
   opacity: 1;
@@ -734,11 +876,13 @@ body {
   color: #ff6b35;
   text-decoration: none;
 }
+
 .carcare-darken-layer {
   position: absolute;
   inset: 0;
   z-index: 1;
 }
+
 /* From Uiverse.io by adamgiebl */
 button {
   font-family: inherit;
@@ -817,7 +961,8 @@ button:active {
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%; /* phần nửa bên phải */
+  width: 50%;
+  /* phần nửa bên phải */
   height: 100%;
   background: linear-gradient(to left, rgba(0, 0, 0, 0.9), transparent);
   z-index: 1;
@@ -839,11 +984,13 @@ button:active {
 }
 
 .carcare-info-box h3 {
-  font-weight: 700;
+  font-weight: bold;
   font-size: 20px;
   margin-bottom: 10px;
-  color: #fff;
+  color: #FFD700;
+  text-shadow: 1px 1px 4px rgba(190, 106, 16, 0.6);
 }
+
 
 .carcare-info-box p {
   font-size: 15px;
@@ -871,25 +1018,31 @@ button:active {
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #fff;
+  color: #FFD700;
   text-align: center;
+  text-shadow: 5px 5px 4px rgba(3, 3, 3, 0.6);
 }
 
 .carcare-right-section p {
   font-size: 14px;
   line-height: 1.5;
   color: #ddd;
-  max-width: 520px; /* kiểm soát độ rộng dòng */
-  text-align: justify; /* căn đều hai bên cho chuyên nghiệp */
-  margin: 0 auto 20px 0; /* căn trái, có khoảng cách dưới */
+  max-width: 520px;
+  /* kiểm soát độ rộng dòng */
+  text-align: justify;
+  /* căn đều hai bên cho chuyên nghiệp */
+  margin: 0 auto 20px 0;
+  /* căn trái, có khoảng cách dưới */
 }
 
 .carcare-image {
   width: 100%;
   max-width: 500px;
   margin-top: 40px;
-  margin-right: -50px; /* đẩy ảnh sang phải */
-  margin-bottom: -340px; /* đẩy ảnh ra khỏi khung xuống dưới */
+  margin-right: -50px;
+  /* đẩy ảnh sang phải */
+  margin-bottom: -340px;
+  /* đẩy ảnh ra khỏi khung xuống dưới */
   position: relative;
   z-index: 2;
 
@@ -910,8 +1063,15 @@ button:active {
   }
 
   .carcare-right-section p {
-    max-width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+    color: #fff;
   }
+
+
 }
 
 @media (max-width: 992px) {
@@ -926,6 +1086,7 @@ button:active {
     max-width: 100%;
     flex: 1;
     text-align: center;
+
   }
 
   .carcare-right-section h1 {
@@ -942,12 +1103,15 @@ button:active {
   .carcare-image {
     max-width: 100%;
     margin: 20px auto 0 auto;
-    transform: translateX(0); /* reset chuyển động */
-    opacity: 1; /* hiển thị ngay */
+    transform: translateX(0);
+    /* reset chuyển động */
+    opacity: 1;
+    /* hiển thị ngay */
   }
 
   .carcare-container::before {
-    display: none; /* tắt lớp phủ trên mobile */
+    display: none;
+    /* tắt lớp phủ trên mobile */
   }
 }
 
@@ -958,6 +1122,7 @@ button:active {
 
   .carcare-info-box h3 {
     font-size: 18px;
+    text-shadow: 1px 1px 4px rgba(190, 106, 16, 0.6);
   }
 
   .carcare-info-box p {
@@ -966,10 +1131,14 @@ button:active {
 
   .carcare-right-section h1 {
     font-size: 24px;
+    text-shadow: 5px 5px 4px rgba(255, 255, 255, 0.9);
+    color: #000000;
+
   }
 
   .carcare-right-section p {
     font-size: 13px;
+    color:black;
   }
 
   .carcare-info-box a {
@@ -1017,12 +1186,14 @@ button:active {
   transform: translateY(-3px) scale(1.2);
   color: #ff6b6b;
 }
+
 /* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1096,6 +1267,7 @@ button:active {
     gap: 0.5rem;
   }
 }
+
 .search-container {
   position: relative;
   display: flex;
@@ -1122,10 +1294,10 @@ button:active {
 .search-input {
   position: absolute;
   top: 60px;
-  right: 20px;
+  left: -95px;
   padding: 10px 30px;
-  border: none;
-  border-radius: 20px;
+
+  border-radius: 10px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease, transform 0.4s ease;
@@ -1150,13 +1322,14 @@ button:active {
 /* Responsive cho mobile */
 @media (max-width: 768px) {
   .search-input {
-    top: 8px;
-    right: 100px;
+    top: 70px;
+    left: -50px;
     width: 160px;
     padding: 8px 20px;
     font-size: 13px;
   }
 }
+
 .floating-icons {
   position: fixed;
   bottom: 30px;
@@ -1193,21 +1366,27 @@ button:active {
   0% {
     transform: rotate(0);
   }
+
   15% {
     transform: rotate(15deg);
   }
+
   30% {
     transform: rotate(-10deg);
   }
+
   45% {
     transform: rotate(8deg);
   }
+
   60% {
     transform: rotate(-6deg);
   }
+
   75% {
     transform: rotate(4deg);
   }
+
   100% {
     transform: rotate(0);
   }
@@ -1217,6 +1396,7 @@ button:active {
   animation: ring 0.6s ease-in-out;
   transform-origin: center;
 }
+
 #scrollProgressBar {
   position: fixed;
   top: 0;
@@ -1228,6 +1408,7 @@ button:active {
   z-index: 9999;
   transition: width 0.1s ease-out;
 }
+
 .about-section {
   padding: 100px 0;
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
@@ -1242,7 +1423,7 @@ button:active {
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
+  background:
     radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
   pointer-events: none;
@@ -1273,6 +1454,7 @@ button:active {
   text-transform: uppercase;
   letter-spacing: 3px;
   position: relative;
+
 }
 
 .about-title::after {
@@ -1330,7 +1512,7 @@ button:active {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  box-shadow: 
+  box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.5),
     0 0 60px rgba(255, 215, 0, 0.1);
 }
@@ -1423,7 +1605,8 @@ button:active {
   margin-top: 80px;
 }
 
-.mission-card, .vision-card {
+.mission-card,
+.vision-card {
   background: rgba(255, 255, 255, 0.05);
   padding: 40px;
   border-radius: 20px;
@@ -1433,7 +1616,8 @@ button:active {
   overflow: hidden;
 }
 
-.mission-card::before, .vision-card::before {
+.mission-card::before,
+.vision-card::before {
   content: '';
   position: absolute;
   top: -50%;
@@ -1445,11 +1629,13 @@ button:active {
   transform: rotate(0deg);
 }
 
-.mission-card:hover::before, .vision-card:hover::before {
+.mission-card:hover::before,
+.vision-card:hover::before {
   transform: rotate(360deg);
 }
 
-.mission-card:hover, .vision-card:hover {
+.mission-card:hover,
+.vision-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(255, 215, 0, 0.15);
 }
@@ -1556,6 +1742,7 @@ button:active {
   opacity: 1;
   transform: translateX(0);
 }
+
 .guide-section {
   margin: 0;
   padding: 0;
@@ -1624,7 +1811,7 @@ button:active {
 }
 
 .guide-right {
-  width:600px;
+  width: 600px;
   background: black;
   color: white;
   padding: 40px;
@@ -1633,7 +1820,7 @@ button:active {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  height:800px;
+  height: 800px;
   position: relative;
   overflow: visible;
 }
@@ -1651,13 +1838,15 @@ button:active {
 
 .guide-right img {
   position: absolute;
-  right: -1px;  /* đẩy ảnh ra ngoài bên phải */
+  right: -1px;
+  /* đẩy ảnh ra ngoài bên phải */
   bottom: 0;
-  width: 700px;    /* kích thước tùy ý */
+  width: 700px;
+  /* kích thước tùy ý */
   height: 550px;
   border-radius: 10px;
   animation: slideInFromRight 1.15s ease-out forwards;
-  opacity: 0; 
+  opacity: 0;
 }
 
 @keyframes slideInFromRight {
@@ -1665,6 +1854,7 @@ button:active {
     transform: translateX(100px);
     opacity: 0;
   }
+
   100% {
     transform: translateX(0);
     opacity: 1;
@@ -1689,4 +1879,80 @@ button:active {
 
 .guide-btn:hover {
   background: #ddd;
+}
+
+/* Tablet: max-width dưới 1024px */
+@media (max-width: 1024px) {
+  .guide-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .guide-left,
+  .guide-right {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .guide-right {
+    height: auto;
+    padding-bottom: 300px;
+  }
+
+  .guide-right img {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    animation: none;
+    opacity: 1;
+  }
+
+  .guide-image {
+    width: 200px;
+    height: 100px;
+    clip-path: none;
+    border-radius: 8px;
+  }
+}
+
+/* Mobile: max-width dưới 768px */
+@media (max-width: 768px) {
+
+  .guide-left,
+  .guide-right {
+    padding: 20px;
+  }
+
+  .guide-item {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+  }
+
+  .guide-text {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .guide-text h3 {
+    font-size: 16px;
+  }
+
+  .guide-text p {
+    font-size: 12px;
+  }
+
+  .guide-image {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+  }
+
+  .guide-btn {
+    width: 100%;
+    height: auto;
+    padding: 12px;
+    font-size: 14px;
+  }
 }

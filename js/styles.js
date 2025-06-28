@@ -6,14 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   window.toggleMobileMenu = toggleMobileMenu; // Để gọi từ HTML
 
-  // Toggle search box
-  const searchIcon = document.querySelector(".search-icon");
-  const searchContainer = document.querySelector(".search-container");
-  if (searchIcon && searchContainer) {
-    searchIcon.addEventListener("click", () => {
-      searchContainer.classList.toggle("active");
-    });
-  }
+
 
   // Smooth scrolling for all anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -179,5 +172,31 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     if (target) {
       target.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const searchContainer = document.querySelector(".search-container");
+  const searchIcon = document.querySelector(".search-icon");
+  const searchInput = document.querySelector(".search-input");
+
+  // Toggle khi nhấn vào icon (mở/lần 2 thì đóng)
+  searchIcon.addEventListener("click", function (e) {
+    e.stopPropagation(); // Ngăn sự kiện lan ra ngoài
+    searchContainer.classList.toggle("active");
+
+    // Nếu đang mở thì focus input
+    if (searchContainer.classList.contains("active")) {
+      searchInput.focus();
+    }
+  });
+
+  // Ngăn bị đóng khi click vào input
+  searchInput.addEventListener("click", function (e) {
+    e.stopPropagation();
+  });
+
+  // Click ra ngoài sẽ đóng
+  document.addEventListener("click", function () {
+    searchContainer.classList.remove("active");
   });
 });

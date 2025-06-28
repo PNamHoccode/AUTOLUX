@@ -12,6 +12,7 @@
     <!-- iPhone/iPad (Safari iOS) -->
     <link rel="apple-touch-icon" href="image/logotabs.png" sizes="180x180" />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
 
     <!-- Android Chrome -->
     <link
@@ -43,37 +44,38 @@
     <!-- Header -->
     <header class="header">
       <nav class="nav-container">
-        <a href="#" class="logo">
-          <img src="image/sss.png" alt="AutoLux Logo" />
-        </a>
-
-        <ul class="nav-menu">
+        <!-- Logo bên trái -->
+        <div class="nav-left">
+          <a href="#" class="logo">
+            <img src="image/sss.png" alt="AutoLux Logo" />
+          </a>
+        </div>
+    
+        <!-- Menu chính ở giữa -->
+        <ul class="nav-menu nav-center">
           <li><a href="#home">Trang Chủ</a></li>
           <li><a href="#cars">Xe Hạng Sang</a></li>
           <li><a href="#services">Dịch Vụ</a></li>
           <li><a href="#about">Về Chúng Tôi</a></li>
           <li><a href="#contact">Liên Hệ</a></li>
-
-          <!-- Giỏ hàng -->
-          <li>
-            <a href="#cart"><i class="fas fa-shopping-cart"></i> Giỏ Hàng</a>
-          </li>
-
-          <!-- Tài khoản -->
-          <li>
-            <a href="#account"><i class="fas fa-user"></i> Tài Khoản</a>
-          </li>
-
-          <!-- Tìm kiếm -->
-          <li class="search-container">
+        </ul>
+    
+        <!-- Phần phải: tìm kiếm, giỏ hàng, tài khoản -->
+        <div class="nav-right">
+          <div class="search-container" >
             <i class="search-icon fas fa-search"></i>
             <input type="text" class="search-input" placeholder="Tìm kiếm..." />
-          </li>
-        </ul>
-
+          </div>
+          <a href="#cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+          <a href="#account" class="nav-link"><i class="fas fa-user"></i></a>
+        </div>
+        
+    
+        <!-- Mobile menu button -->
         <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
       </nav>
     </header>
+    
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -112,117 +114,37 @@
         <h2 class="section-title">Xe Hạng Sang Nổi Bật</h2>
         <div class="cars-grid">
           <div class="car-card">
-            <img
-              src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Lamborghini"
-              class="car-image"
-            />
-            <div class="car-info">
-              <div class="car-brand">LAMBORGHINI</div>
-              <h3 class="car-name">Huracán EVO</h3>
-              <div class="car-price">15.8 tỷ VNĐ</div>
-              <div class="car-specs">
-                <span>V10 5.2L</span>
-                <span>610 HP</span>
-                <span>2020</span>
-              </div>
-              <button class="view-btn">Xem Chi Tiết</button>
+            <div class="car-image-container">
+                <img
+                    src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Lamborghini Huracán EVO"
+                    class="car-image"
+                />
+                <div class="luxury-badge">Premium</div>
             </div>
-          </div>
+            <div class="car-info">
+                <div class="car-brand">Lamborghini</div>
+                <h3 class="car-name">Huracán EVO</h3>
+                <div class="car-price">15.8 TỶ VNĐ</div>
+                <div class="car-specs">
+                    <div class="spec-item">
+                        <div class="spec-value">V10 5.2L</div>
+                        <div class="spec-label">Engine</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-value">610 HP</div>
+                        <div class="spec-label">Power</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-value">2020</div>
+                        <div class="spec-label">Year</div>
+                    </div>
+                </div>
+                <button class="view-btn">Xem Chi Tiết</button>
+            </div>
+        </div>
 
-          <div class="car-card">
-            <img
-              src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Rolls Royce"
-              class="car-image"
-            />
-            <div class="car-info">
-              <div class="car-brand">ROLLS-ROYCE</div>
-              <h3 class="car-name">Phantom VIII</h3>
-              <div class="car-price">28.5 tỷ VNĐ</div>
-              <div class="car-specs">
-                <span>V12 6.75L</span>
-                <span>563 HP</span>
-                <span>2021</span>
-              </div>
-              <button class="view-btn">Xem Chi Tiết</button>
-            </div>
-          </div>
-
-          <div class="car-card">
-            <img
-              src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Ferrari"
-              class="car-image"
-            />
-            <div class="car-info">
-              <div class="car-brand">FERRARI</div>
-              <h3 class="car-name">F8 Tributo</h3>
-              <div class="car-price">18.2 tỷ VNĐ</div>
-              <div class="car-specs">
-                <span>V8 3.9L Turbo</span>
-                <span>710 HP</span>
-                <span>2020</span>
-              </div>
-              <button class="view-btn">Xem Chi Tiết</button>
-            </div>
-          </div>
-
-          <div class="car-card">
-            <img
-              src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Bentley"
-              class="car-image"
-            />
-            <div class="car-info">
-              <div class="car-brand">BENTLEY</div>
-              <h3 class="car-name">Continental GT</h3>
-              <div class="car-price">12.8 tỷ VNĐ</div>
-              <div class="car-specs">
-                <span>W12 6.0L</span>
-                <span>626 HP</span>
-                <span>2021</span>
-              </div>
-              <button class="view-btn">Xem Chi Tiết</button>
-            </div>
-          </div>
-
-          <div class="car-card">
-            <img
-              src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Audi"
-              class="car-image"
-            />
-            <div class="car-info">
-              <div class="car-brand">AUDI</div>
-              <h3 class="car-name">R8 V10 Plus</h3>
-              <div class="car-price">9.5 tỷ VNĐ</div>
-              <div class="car-specs">
-                <span>V10 5.2L</span>
-                <span>610 HP</span>
-                <span>2020</span>
-              </div>
-              <button class="view-btn">Xem Chi Tiết</button>
-            </div>
-          </div>
-
-          <div class="car-card">
-            <img
-              src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Porsche"
-              class="car-image"
-            />
-            <div class="car-info">
-              <div class="car-brand">PORSCHE</div>
-              <h3 class="car-name">911 Turbo S</h3>
-              <div class="car-price">14.2 tỷ VNĐ</div>
-              <div class="car-specs">
-                <span>H6 3.8L Turbo</span>
-                <span>640 HP</span>
-                <span>2021</span>
-              </div>
-              <button class="view-btn">Xem Chi Tiết</button>
-            </div>
+        
           </div>
         </div>
       </div>
